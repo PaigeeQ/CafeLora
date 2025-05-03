@@ -21,3 +21,16 @@ document.querySelector('#root').innerHTML = render(
     <Footer />
   </div>
 );
+
+// klikání na hamburger
+document.querySelector("nav-btn").addEventListener("click", () => {
+  const nav = document.querySelector(".rollout-nav");
+  nav.classList.toggle("nav-closed");
+});
+
+// Schovej menu po kliknutí na odkaz
+document.querySelector("rollout-nav").addEventListener("click", (e) => {
+  if (e.target.tagName === 'A') {
+    e.currentTarget.classList.add('nav-closed');
+  }
+});
