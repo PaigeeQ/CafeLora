@@ -23,14 +23,16 @@ document.querySelector('#root').innerHTML = render(
 );
 
 // klikání na hamburger
-document.querySelector("nav-btn").addEventListener("click", () => {
-  const nav = document.querySelector(".rollout-nav");
-  nav.classList.toggle("nav-closed");
-});
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelector('.nav-btn').addEventListener('click', () => {
+    const nav = document.querySelector('.rollout-nav');
+    nav.classList.toggle('nav-closed');
+  });
 
 // Schovej menu po kliknutí na odkaz
-document.querySelector("rollout-nav").addEventListener("click", (e) => {
+document.querySelector('.rollout-nav').addEventListener('click', (e) => {
   if (e.target.tagName === 'A') {
     e.currentTarget.classList.add('nav-closed');
   }
+});
 });

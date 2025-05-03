@@ -1,4 +1,5 @@
 import './Menu.css';
+import { Drink } from '../components/Drink';
 
 export const Menu = () => {
     return (
