@@ -1,5 +1,5 @@
 import './Menu.css';
-import { Drink } from '../components/Drink';
+import { Drink } from '../Components/Drink';
 
 export const Menu = ({ drinks }) => {
   return (
@@ -12,15 +12,15 @@ export const Menu = ({ drinks }) => {
         <div className="drinks-list">
         {drinks.map((drink) => (
            <Drink
-           key={drink.id}
-           id={drink.id}
-           name={drink.name}
-           image={drink.image}
-           ordered={drink.ordered}
-           layers={drink.layers}
-         />
-       ))}
-     </div>
+              key={drink.id}
+              id={drink.id}
+              name={drink.name}
+              image={`http://localhost:4001${drink.image}`} 
+              ordered={drink.ordered}
+              layers={drink.layers}
+            />
+          ))}
+        </div>
         <div className="order-detail">
           <a href="/order.html">Detail objednávky</a>
         </div>
