@@ -9,22 +9,32 @@ import { Gallery } from '../components/Gallery';
 import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
 
-document.querySelector('#root').innerHTML = render(
-  <div className="page">
-    <Header />
-    <main>
-    <Banner />
-    <Menu /> 
-    <Gallery /> 
-    <Contact />
-    </main>
-    <Footer />
-  </div>
-);
+const loadDrinks = async () => {
+  const response = await fetch('http://localhost:4001/api/drinks');
+  const json = await response.json();
+
+  console.log(json); // Tady jsou všechny drinky
+
+  document.querySelector('#root').innerHTML = render(
+    <div className="page">
+      <Header />
+      <main>
+        <Banner />
+        <Menu drinks={json.data} />
+        <Gallery />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+loadDrinks();
+
 
 // klikání na hamburger
 window.addEventListener("DOMContentLoaded", () => {
-  document.querySelector('.nav-btn').addEventListener('click', () => {
+  document.querySelector('#nav-btn').addEventListener('click', () => {
     const nav = document.querySelector('.rollout-nav');
     nav.classList.toggle('nav-closed');
   });

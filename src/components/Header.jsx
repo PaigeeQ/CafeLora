@@ -5,7 +5,10 @@ export const Header = () => {
     <header className="header" id="header">
       <div className="header__content container">
         <div className="site-logo"></div>
-        <button className="nav-btn nav-btn--menu" aria-label="menu"></button>
+        <button
+          className="nav-btn nav-btn--menu"
+          id="nav-btn"
+          aria-label="menu"></button>
         <nav className="navigation rollout-nav nav-closed">
           <a href="#home">Domů</a>
           <a href="#menu">Menu</a>
